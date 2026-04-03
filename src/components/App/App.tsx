@@ -4,7 +4,7 @@ import CafeInfo from "../CafeInfo/CafeInfo";
 import { useState } from "react";
 import VoteOptions from "../VoteOptions/VoteOptions";
 
-import type { Votes, VoteType } from "../../types/votes";
+import type {Votes, VoteType } from "../../types/votes";
 
 
 
@@ -13,7 +13,7 @@ export default function App() {
     good: 0,
     neutral: 0,
     bad: 0,
-  });
+      });
 
   const handleVote = (type: VoteType) => {
     setVotes((prev) => ({
@@ -27,7 +27,7 @@ export default function App() {
       good: 0,
       neutral: 0,
       bad: 0,
-    });
+           });
   };
 
   const totalVotes = votes.good + votes.neutral + votes.bad;
