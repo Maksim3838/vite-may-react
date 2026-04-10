@@ -24,7 +24,7 @@ export default function VoteOptions({ onVote, onReset, canReset }:VoteOptionsPro
 
 <button className={css.button} onClick={() => onVote("bad")}>
   Bad
-            </button>
+ </button>
             {canReset && (
   <button
     className={`${css.button} ${css.reset}`}

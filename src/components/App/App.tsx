@@ -3,9 +3,9 @@ import css from "./App.module.css";
 import CafeInfo from "../CafeInfo/CafeInfo";
 import { useState } from "react";
 import VoteOptions from "../VoteOptions/VoteOptions";
-
+import VoteStats from "../VoteStats/VoteStats"
 import type {Votes, VoteType } from "../../types/votes";
-
+import Notification from "../Notification/Notification"
 
 
 export default function App() {
@@ -38,9 +38,15 @@ export default function App() {
       <CafeInfo />
 
       <VoteOptions 
-        onVote={handleVote} 
-        onReset={resetVotes} 
-        canReset={totalVotes > 0} 
+        onVote={handleVote}
+        onReset={resetVotes}
+        canReset={totalVotes > 0}
       />
+      {totalVotes > 0 ? (
+        <VoteStats
+        votes={votes}
+        totalVotes={totalVotes}
+        positiveRate={positiveRate} />):
+      (<Notification/>)}
     </div>);
 }
